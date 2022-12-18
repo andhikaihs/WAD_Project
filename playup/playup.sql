@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3308
--- Generation Time: Dec 18, 2022 at 01:58 PM
+-- Generation Time: Dec 18, 2022 at 01:59 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -52,6 +52,32 @@ INSERT INTO `book` (`id_book`, `id_user`, `name_book`, `phone_book`, `address_bo
 ('680356', '4516', 'Andhika Ihsan Kamil', '08123842932', 'Bandung', 'Sony Playstation 5', '2022-12-19', 2, 'Cancelled'),
 ('746492', '7421', 'Marai Nuran', '081293784129', 'Singapore', 'Sony Playstation 4', '2022-12-17', 30, 'Completed');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id_user` varchar(20) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `name_user` varchar(255) NOT NULL,
+  `email_user` varchar(255) NOT NULL,
+  `pass_user` varchar(255) NOT NULL,
+  `role_user` varchar(20) NOT NULL DEFAULT 'user'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id_user`, `username`, `name_user`, `email_user`, `pass_user`, `role_user`) VALUES
+('1', 'admin', 'admin', 'admin', 'admin', 'admin'),
+('1538', 'b', 'b', 'b', 'b', 'user'),
+('4516', 'andhikaihs', 'Andhika Ihsan Kamil', 'andhikaihs@gmail.com', '123456', 'user'),
+('5869', 'andhika', 'Andhika Ihsan Kamil', 'andhika.aik@gmail.com', '12345678', 'user'),
+('7421', 'a', 'a', 'a', 'a', 'user');
+
 --
 -- Indexes for dumped tables
 --
@@ -61,6 +87,12 @@ INSERT INTO `book` (`id_book`, `id_user`, `name_book`, `phone_book`, `address_bo
 --
 ALTER TABLE `book`
   ADD PRIMARY KEY (`id_book`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id_user`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
